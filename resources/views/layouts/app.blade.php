@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app" class="min-h-screen bg-red-100">
-        <header class="bg-blue-500 w-full py-3 mb-4">
+        <header class="bg-blue-900 w-full py-3 mb-4">
             <div class="container mx-auto flex justify-between text-white">
                 <div class="font-bold">
                     {{  config('app.name', 'Tajuk') }}
@@ -44,8 +44,8 @@
 
         <div class="container mx-auto flex justify-start">
             <!-- Navigation -->
-            <div class="bg-blue-300 py-4 px-5 w-1/6 min-h-full rounded-lg text-white">
-                Dashboard
+            <div class="bg-blue-700 py-4 px-5 w-1/6 min-h-full rounded-lg text-white">
+                <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
             </div>
             <!-- End Navigation -->
 
