@@ -19,7 +19,7 @@
 
             <!-- Navigation -->
             <div class="py-3 px-5">
-                <a href="{{ route('home') }}"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+                <a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
             </div>
             <!-- End Navigation -->
         </div>

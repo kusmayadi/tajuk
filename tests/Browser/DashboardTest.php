@@ -7,7 +7,7 @@ use Tests\DuskTestCase;
 use Tests\Browser\Pages\Login;
 use App\Models\User;
 
-class HomeTest extends DuskTestCase
+class DashboardTest extends DuskTestCase
 {
     /**
      * Auth middleware test.
@@ -17,7 +17,7 @@ class HomeTest extends DuskTestCase
     public function testAuth()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit(route('home'))
+            $browser->visit(route('dashboard'))
                     ->assertRouteIs('login');
         });
     }
@@ -25,17 +25,17 @@ class HomeTest extends DuskTestCase
     /**
      * Home page test
      */
-    public function testHome()
+    public function testDashboard()
     {
         $user = factory(User::class)->create();
 
         $this->browse(function (Browser $browser) use ($user) {
-            $browser->visit(route('home'))
+            $browser->visit(route('dashboard'))
                     ->on(new Login)
                     ->type('@email', $user->email)
                     ->type('@password', 'secret')
                     ->press('Login')
-                    ->assertRouteIs('home')
+                    ->assertRouteIs('dashboard')
                     ->assertSee('Dashboard');
         });
     }
