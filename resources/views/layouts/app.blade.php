@@ -9,22 +9,33 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="min-h-screen bg-red-100">
-        <header class="bg-blue-900 w-full py-3 mb-4">
-            <div class="container mx-auto flex justify-between text-white">
-                <div class="font-bold">
-                    {{  config('app.name', 'Tajuk') }}
-                </div>
+    <div id="app" class="flex justify-start">
+        <div class="w-1/6 bg-blue-800 min-h-screen text-white">
+            <!--- Logo -->
+            <div class="font-bold bg-blue-900 py-3 px-5">
+                {{  config('app.name', 'Tajuk') }}
+            </div>
+            <!-- End Logo -->
 
-                <div class="dropdown">
+            <!-- Navigation -->
+            <div class="py-3 px-5">
+                <a href="{{ route('home') }}"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            </div>
+            <!-- End Navigation -->
+        </div>
+
+        <div class="w-5/6">
+            <!-- Profile -->
+            <div class="text-right items-right py-3 px-5 bg-gray-200">
+                <div class="dropdown inline-block relative">
                     <button class="inline-flex items-center">
-                        <span class="mr-1">{{  Auth::user()->name }}</span>
+                        <span class="mr-1 text-sm">{{  Auth::user()->name }}</span>
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                         </svg>
                     </button>
 
-                    <ul class="dropdown-menu absolute hidden bg-blue-800 p-4">
+                    <ul class="dropdown-menu absolute hidden bg-blue-700 p-4 text-white text-sm">
                         <li>
                             <a
                                 href="{{ route('logout') }}"
@@ -40,17 +51,10 @@
                     </ul>
                 </div>
             </div>
-        </header>
-
-        <div class="container mx-auto flex justify-start">
-            <!-- Navigation -->
-            <div class="bg-blue-700 py-4 px-5 w-1/6 min-h-full rounded-lg text-white">
-                <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
-            </div>
-            <!-- End Navigation -->
+            <!-- End Profile -->
 
             <!-- Content -->
-            <div class="py-4 px-5">
+            <div class="py-2 px-5">
                 @yield('content')
             </div>
             <!-- End content -->
