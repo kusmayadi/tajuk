@@ -39,4 +39,11 @@ class Login extends Page
             '@password' => 'input[name="password"]'
         ];
     }
+
+    public function loginUser(Browser $browser, $user)
+    {
+        $browser->type('email', $user->email)
+                ->type('password', 'secret')
+                ->press('Login');
+    }
 }

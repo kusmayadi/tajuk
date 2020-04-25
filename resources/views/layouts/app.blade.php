@@ -18,26 +18,27 @@
             <!-- End Logo -->
 
             <!-- Navigation -->
-            <div class="py-3 px-5">
-                <a href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
+            <div id="navigation" class="py-3 px-5">
+                <a dusk="nav-dashboard" href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a>
             </div>
             <!-- End Navigation -->
         </div>
 
         <div class="w-5/6">
             <!-- Profile -->
-            <div class="text-right items-right py-3 px-5 bg-gray-200">
+            <div id="profile" class="text-right items-right py-3 px-5 bg-gray-200">
                 <div class="dropdown inline-block relative">
                     <button class="inline-flex items-center">
-                        <span class="mr-1 text-sm">{{  Auth::user()->name }}</span>
+                        <span dusk="user" class="mr-1 text-sm">{{  Auth::user()->name }}</span>
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                         </svg>
                     </button>
 
-                    <ul class="dropdown-menu absolute hidden bg-blue-700 p-4 text-white text-sm">
+                    <ul dusk="profile_menu" class="dropdown-menu absolute hidden bg-blue-700 p-4 text-white text-sm">
                         <li>
                             <a
+                                dusk="logout"
                                 href="{{ route('logout') }}"
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                             >
