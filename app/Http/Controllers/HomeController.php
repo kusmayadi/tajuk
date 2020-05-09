@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class HomeController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -13,6 +13,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('home');
     }
 }

@@ -47,7 +47,7 @@ class NavigationTest extends DuskTestCase
                     ->with('#navigation', function ($navigation) {
                         $navigation->assertSee('Dashboard')
                                    ->click('@nav-dashboard')
-                                   ->assertRouteIs('dashboard');
+                                   ->assertRouteIs('home');
                     });
         });
     }

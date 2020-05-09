@@ -18,5 +18,5 @@ Route::redirect('/', '/login');
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/', 'HomeController@index')->name('home');
 });
